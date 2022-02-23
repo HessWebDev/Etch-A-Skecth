@@ -1,0 +1,57 @@
+#main-container{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+
+#container{
+
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    width: 500px;
+    height: 500px;
+    grid-row-gap: 0px;
+    border: 10px solid black;
+    margin: auto;
+    border-radius: 2%;
+}
+
+div{
+
+    transition: all .01s ease;
+    height: (500/16)px;
+    width: (500/16)px
+    
+}
+
+
+
+.Blue{
+  
+    background-color: aqua;
+}
+
+#navbar{
+    position: relative;
+
+}
+#navigation > a {
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    font-size: large;
+    list-style-type: none;
+    text-decoration: none;
+    padding-bottom: 20px;
+}
+h1{
+    text-align: center;
+}
+
+body{
+    background-color: gray;
+}
+
