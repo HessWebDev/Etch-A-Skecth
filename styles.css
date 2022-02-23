@@ -57,7 +57,7 @@ body{
 
 
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
    
     #main-container{
         display: grid;
@@ -70,8 +70,8 @@ body{
     
         display: grid;
         grid-template-columns: repeat(16, auto);
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         grid-row-gap: 0px;
         border: 6px solid black;
         margin: auto;
@@ -81,8 +81,8 @@ body{
     div{
     
         transition: all .01s ease;
-        height: (300/16)px;
-        width: (300/16)px
+        height: (200/16)px;
+        width: (200/16)px
         
     }
   }
