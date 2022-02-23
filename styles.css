@@ -61,7 +61,7 @@ body{
    
     #main-container{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
     
     }
     
@@ -84,5 +84,16 @@ body{
         height: (200/16)px;
         width: (200/16)px
         
+    }
+
+    li{
+        font-size: large;
+        list-style-type: none;
+        text-decoration: none;
+        padding-bottom: 20px;
+    }
+    ul{
+        display: flex;
+        justify-content: space-between;
     }
   }
