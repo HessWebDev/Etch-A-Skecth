@@ -11,14 +11,18 @@
 <body>
     <h1>Etch-A-Sketch</h1>
     <div id = "main-container">
-        <div id = "container"></div>
+        <div class = "container"></div>
             <div id ="navbar">
                 <ul id = "navigation">
             
                     <a href="#"><li id ="Erase">Erase</li></a>
                     <a href ="#"><li id = "Clear">Clear</li></a>
                     <a href ="#"><li id ="Draw">Draw</li></a>
-                    <a href = "#"><li>Screen Shot</li></a>       
+                    <a href = "#"><li>Screen Shot</li></a> 
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="60" value="16" class="slider" id="myRange" oninput="this.nextElementSibling.value = this.value">
+                        <output>16</output>
+                    </div> 
                 </ul>
             </div>
     </div>

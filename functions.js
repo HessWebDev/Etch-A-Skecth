@@ -1,28 +1,52 @@
-const container = document.getElementById("container");
+const container = document.querySelector(".container");
 
 let divs = [];
 let color = 'blue';
 
-for(let i = 0; i < 256; i++){
-    
-    divs[i] = document.createElement("div");
-    divs[i].id = `Class${i}`;
-    //divs[i].innerHTML = `${i}`;
+let gridValue = document.getElementById('myRange');
+console.log(gridValue.vaue);
+gridValue.addEventListener('input', () =>{
+    clearGrid();
+    //document.getElementsByName('div').style = `height: (500/${gridValue.value}) width: (500/${gridValue.value})`;
+})
+console.log(gridValue.value);
+//document.getElementsByTagName('div').style = `height: 500/${gridValue}, width: 500/${gridValue}`;
+
+function clearGrid(){
+    const divs = document.querySelectorAll('.box');
+
+    divs.forEach(box => box.remove());
+
+
+    drawGrid();
     
 }
+function drawGrid(){
+for(let i = 0; i < gridValue.value*gridValue.value; i++){
+    
+    const div = document.createElement("div");
+    container.style.gridTemplateColumns = `repeat(${gridValue.value}, 1fr)`;
+    container.appendChild(div).classList.add('box');
+    
+}
+appendDiv();
+}
 
-for(let j = 0; j < 256; j++){
-
-    container.appendChild(divs[j]);
-    divs[j].addEventListener('mouseover', ()=>{
-
-        document.getElementById(`Class${j}`).style.backgroundColor = color;
+function appendDiv(){
+    const boxes = container.querySelectorAll('.box');
+    boxes.forEach(box => box.addEventListener('mouseover', () => {
+        box.style.backgroundColor = color;
+    }));
         
-    })
+
     
 }
 
-function unpop(element){
+
+drawGrid();
+
+
+/*function unpop(element){
     let l = element; 
     if(l<256){
         console.log('Im here');
@@ -52,7 +76,7 @@ function pop(element){
 }
 
 
-    pop(0);
+    pop(0);*/
 
 
 
@@ -73,11 +97,9 @@ document.getElementById("Draw").addEventListener('click', ()=>{
 
 document.getElementById("Clear").addEventListener('click', ()=>{
 
-
-    for(let k = 0; k < 256; k++){
-
-        document.getElementById(`Class${k}`).style.backgroundColor = 'White';
-    }
+    const boxes = container.querySelectorAll('.box');
+    boxes.forEach(box => box.style.backgroundColor = 'white');
+   
 
 })
 
